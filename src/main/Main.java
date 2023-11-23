@@ -60,8 +60,7 @@ public final class Main {
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-        window = glfwCreateWindow(1200, 800, "BAS-E (Basil Anthony Solovyev " 
-            + "Engine) v1.0.0 Example", NULL, NULL);
+        window = glfwCreateWindow(1200, 800, "BAS-E Example", NULL, NULL);
         if (window == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
         }
@@ -96,6 +95,7 @@ public final class Main {
         });
 
         textureAtlas = new TextureAtlas("./res/atlas.png");
+        textureAtlas.bind();
         exampleAnimation = new Animation(new float[] {16.0f, 128.0f, 24.0f, 
             128.0f}, 8.0f, 8.0f, 2.0f);
     }

@@ -11,7 +11,7 @@ import java.time.Instant;
 import org.lwjgl.system.MemoryStack;
 
 /**
- * Utility class for things like geting the cursor position and fps.
+ * Utility class for things like getting the cursor position and fps.
  */
 public final class GameUtils {
     static double lastEpoch;

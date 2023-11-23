@@ -36,6 +36,11 @@ public final class TextureAtlas {
     private ByteBuffer data;
     private int id;
 
+    /**
+     * Creates a new texture using an image.
+     * 
+     * @param path source image path
+     */
     public TextureAtlas(String path) {
         Path pathTest = Paths.get(path);
         if (Files.notExists(pathTest)) {
@@ -72,7 +77,16 @@ public final class TextureAtlas {
                 GL_UNSIGNED_BYTE, data);
 
             STBImage.stbi_image_free(data);
+
+            glBindTexture(GL_TEXTURE_2D, 0);
         }
+    }
+
+    /**
+     * Binds this texture for the current batch.
+     */
+    public void bind() {
+        glBindTexture(GL_TEXTURE_2D, id);
     }
 
     public int getId() {
