@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo Compiling...
+javac -classpath "lib/lwjgl-release-3.3.2-custom/*" -sourcepath src/ -d bin src/main/Main.java
+echo Running...
+java -classpath "lib/lwjgl-release-3.3.2-custom/*":"bin" main.Main
